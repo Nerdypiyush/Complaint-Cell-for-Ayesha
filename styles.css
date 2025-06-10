@@ -1,0 +1,46 @@
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+    background-repeat: repeat;
+  }
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: floatUp 3s ease-in-out forwards;
+    opacity: 0.8;
+    z-index: 40;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: rotate(45deg) translateY(0);
+      opacity: 0.9;
+    }
+    100% {
+      transform: rotate(45deg) translateY(-600px);
+      opacity: 0;
+    }
+  }
+  

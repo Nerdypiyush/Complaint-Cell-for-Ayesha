@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Her Majesty's Complaint Cell</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to right, #ffe0f0, #ffd6ec);
+    }
+
+    .glass-card {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 182, 193, 0.3);
+      box-shadow: 0 8px 30px rgba(255, 182, 193, 0.3);
+    }
+
+    .animated-title {
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gradient-button {
+      background: linear-gradient(to right, #f472b6, #ec4899);
+    }
+
+    .gradient-button:hover {
+      background: linear-gradient(to right, #ec4899, #f43f5e);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center py-10 relative overflow-x-hidden text-pink-900">
+
+  <h3 class="text-5xl font-bold mb-4 text-center animated-title drop-shadow-xl">
+    Her Majesty Ayesha's Complaint Cell 💌
+  </h3>
+
+  <p class="mb-10 text-center text-lg max-w-2xl px-4">
+    Dearest Lady Ayesha, should thou feel discontented, slighted, or merely whimsically aggrieved, pray lodge thy noble complaint below. Thy faithful knight shall duly respond with all humility and haste
+  </p>
+
+  <!-- Complaint Form -->
+  <form 
+    id="complaintForm"
+    action="https://formspree.io/f/xovwepgp"
+    method="POST"
+    class="glass-card rounded-3xl p-8 w-full max-w-lg"
+  >
+    <div class="mb-6">
+      <label class="block text-pink-800 font-semibold mb-2" for="name">
+        Thy Name :
+      </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value="Ayesha"
+        readonly
+        class="w-full border border-pink-300 p-3 rounded-lg bg-white bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-pink-400"
+      />
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-pink-800 font-semibold mb-2" for="mood">
+        Thy Mood:
+      </label>
+      <select
+        name="mood"
+        id="mood"
+        class="w-full border border-pink-300 p-3 rounded-lg bg-white bg-opacity-80"
+      >
+        <option value="Annoyed">Vexed 😤</option>
+        <option value="Upset">Sorrowful 😢</option>
+        <option value="Playful">Whimsically Peeved 😜</option>
+        <option value="Wrathful">Most Enraged 😡</option>
+      </select>
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-pink-800 font-semibold mb-2" for="message">
+        Thy Noble Complaint:
+      </label>
+      <textarea
+        name="message"
+        id="message"
+        rows="5"
+        placeholder="Express thy displeasure here my dearly Piyush..."
+        class="w-full border border-pink-300 p-3 rounded-lg bg-white bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="gradient-button text-white px-6 py-3 rounded-xl font-semibold shadow-md transition-all w-full"
+    >
+      Submit Thy Grievance
+    </button>
+  </form>
+
+  <!-- Complaint History -->
+  <div class="mt-14 w-full max-w-2xl px-4" id="history">
+    <h2 class="text-3xl font-bold mb-4 text-pink-800 text-center">Past Grievances of Her Highness</h2>
+    <ul id="complaintList" class="space-y-4"></ul>
+  </div>
+
+  
+ <!-- Heart Animation Container -->
+<div id="hearts" class="absolute top-0 left-0 w-full h-full pointer-events-none z-30"></div>
+
+  <footer class="mt-16 text-sm text-pink-600 text-center">
+    With utmost reverence and affection, lovingly maintained by Her Knight Mohsin ❤️
+  </footer>
+
+<!-- Royal Center Notification Box -->
+<div id="toast" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+bg-pink-200 text-pink-900 px-8 py-6 rounded-2xl shadow-2xl opacity-0 scale-90 
+transition-all duration-500 z-50 text-center max-w-md w-[90%] pointer-events-none">
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
