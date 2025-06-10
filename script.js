@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p><strong>Date:</strong> ${c.date}</p>
           <p><strong>Mood:</strong> ${c.mood}</p>
           <p><strong>Complaint:</strong> ${c.message}</p>
-          <p class="mt-2 italic text-pink-700">Auto-Reply: “Thy concern hath reached mine ears and shall not go unanswered.”</p>
+          <p class="mt-2 italic text-pink-700">Mohsin : “Your concern hath reached mine ears and shall not go unanswered my Piyush :)”</p>
         `;
         complaintList.appendChild(li);
       });
